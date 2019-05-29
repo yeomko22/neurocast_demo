@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <!-- meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+    <title>Brain Factorization Project</title>
+
+    <!-- stylesheets -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">
+    <link rel="stylesheet" href="static/bootstrap.min.css">
+    <link rel="stylesheet" href="static/magnific-popup.css">
+    <link rel="stylesheet" href="static/templatemo-style.css">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/redmond/jquery-ui.min.css" />
+
+    <!-- javascripts -->
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+    crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+    crossorigin="anonymous"></script>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.min.js"></script>
+    <script type="text/javascript">
+        var url_string = window.location.href;
+        var url = new URL(url_string);
+        var c = url.searchParams.get("key");
+        var params = [];
+        params["encodedImages"] = ["anatomical.nii", "abilities_train.nii", "abilities_recom.nii"];
+        params["luts"] = [{"name": "Red", "data":[[0, 1, 0, 0], [1, 1, 0, 0]]},{"name": "Blue", "data":[[0, 0, 0, 1],[1, 0, 0, 1]]}];
+        params["abilities_recom.nii"] = {"lut": "Red", "alpha":0.5};
+        params["abilities_train.nii"] = {"lut": "Blue", "alpha":0.5};
+
+        function changeKey(){
+        document.getElementById("NifTiFrame").src = "http://files.junsol.me/nc/?key="+document.getElementById("key").value;
+        }
+     </script>
+</head>
+
+<body>
+        <div class="container">
+            <div class="row">
+                <div class="tm-left-right-container">
+                    <!-- Left column -->
+                    <div class="tm-blue-bg tm-left-column">                        
+                        <div class="tm-logo-div text-xs-center">
+                            <h3>2019-01</h3>
+                            <h3>SW Capstone Project</h3>
+                            <h1 class="tm-site-name">Team BRAIN</h1>
+                        </div>
+                        <nav class="tm-main-nav">
+                            <ul class="tm-main-nav-ul">
+                                <li class="tm-nav-item">
+                                    <a href="#welcome" class="tm-nav-item-link">Brain Factorization</a>
+                                </li>
+                                <li class="tm-nav-item">
+                                    <a href="#about" class="tm-nav-item-link">Dataset</a>
+                                </li>
+                                <li class="tm-nav-item">
+                                    <a href="#galleryone" class="tm-nav-item-link">Method</a>
+                                </li>
+                                <li class="tm-nav-item">
+                                    <a href="#secondgallery" class="tm-nav-item-link">Dashboard</a>
+                                </li>
+                                <li class="tm-nav-item">
+                                    <a href="#thirdgallery" class="tm-nav-item-link">Members</a>
+                                </li>
+                                <li class="tm-nav-item">
+                                    <a href="#contact" class="tm-nav-item-link">Contact Us</a>
+                                </li>
+                            </ul>
+                        </nav>                                         
+                    </div>
+                    
+                    <!-- Right column -->
+                    <div class="tm-right-column">
+                        <figure>
+                            <img src="static/header.jpg" alt="Header image" class="img-fluid">
+                        </figure>
+
+                        <div class="tm-content-div">
+
+                            <!-- Brain Factorization -->
+                            <section id="welcome" class="tm-section">
+                                <header>
+                                    <h2 class="tm-blue-text tm-welcome-title tm-margin-b-45">Brain Factorization</h2>
+                                </header>
+                                <p>We aim for predicting the candidate associations between brain activation and human behavior which are unknown. To do so, we apply collaborative filtering approach on the Neurosynth dataset which integrated findings on brain activation and human behavior by integrating neuropsychological findings. </p>
+                                <p>To our knowledge, this project is the first trial which utilizes recommendation algorithm at estimating and specifying new candidate correlations between brain voxel and behavior. The final goal of the project is to make an educated guess based on Neurosynth dataset and draw a candidate correlation set. Later, we are planning to organize a network map or visualized 3-dimensional graph based on the correlations we bring up with and release it on the web.</p>
+                            </section>
+
+                            <!-- Dataset -->
+                            <section id="about" class="tm-section">
+                                <div class="row">                                                                
+                                    <div class="col-lg-8 col-md-7 col-sm-12 col-xs-12 push-lg-4 push-md-5">
+                                        <header>
+                                            <h2 class="tm-blue-text tm-section-title tm-margin-b-45">Dataset</h2>
+                                        </header>
+                                        <p>We use a dataset “Neurosynth” as a foundation to predict unknown candidate associations between behavior and brain activation.  It provides matrix-shaped dataset that identifies association between 1335 behavioral keywords and brain voxel by analyzing 14371 neuropsychological studies. 1335 behavioral keywords were chosen by manually identifying keywords in the neuropsychological papers which not only frequently appeared in papers but also have theoretical importance. “Brain voxel” refers to the “pixel with brain volume”, which is an basic unit of the brain functional neuroimage. Amongst various ways to define voxel, Neurosynth followed “MNI152 space” which defines a voxel as 2mm x 2mm x 2mm cube. Whole brain can be divided into 90 x 109 x 90 voxels using this method. Therefore, “neurosynth matrix” can be defined as 1335 x 90 x 109 x 90 matrix which identifies brain-behavior association. </p>
+                                        <a href="neurosynth.org">visit Neurosynth website</a>
+                                    </div>
+                                    <div class="col-lg-4 col-md-5 col-sm-12 col-xs-12 pull-lg-8 pull-md-7 tm-about-img-container">
+                                        <img src="static/neurosynth.jpg" alt="Image" class="img-fluid">
+                                    </div>  
+                                </div>                            
+                            </section>  
+
+                            <!-- Method -->
+                            <section id="galleryone" class="tm-section">
+                                <header><h2 class="tm-blue-text tm-section-title tm-margin-b-30">Method</h2></header>
+                                <p>By applying matrix factorization method, we intended to find unknown relationship between a voxel cluster and a keyword. The basic concept of matrix factorization is split original matrix dataset into latent factor matrix for user and item. In our case, user is a keyword and an item is a voxel cluster id. Latent factor matrix means feature matrix which can describe the user of item preference. </p>
+                                <p>By multiplying the transpose of user latent factor matrix and item latent factor matrix, we can predict relationship score matrix. Comparing predict relationship score with original matrix, we can get loss function.</p>
+                                <p>We can subtract predicted value with original data to calculate accuracy of our prediction. Then latent factor matrix can be trained in direction which can minimize the difference between prediction and original data. Adding L2-normalization for regularization, loss function can be computed. </p>
+                            </section>
+
+                            <!-- Dashboard -->
+                            <section id="secondgallery" class="tm-section">
+                                <header><h2 class="tm-blue-text tm-section-title tm-margin-b-30">Dashboard Demo</h2></header>
+                                <div class="tm-gallery-container tm-gallery-2">
+                                    <form>
+                                        <input type="search" id="key" size="20" maxlength="40" name="key">
+                                    <button type="button" onClick="changeKey();" class="btn btn-primary">Search</button></form>
+                                    <p>Search any behavior keyword in the list and see the trained / recommended regarding brain region.<br><span style="color:red">Red regions</span> : Regions used to train the model / <span style="color:blue">Blue regions</span> : Regions recommended by the model<br>*You can type any letter and get some candidates from the keywords list!*<br>The result will be displayed HERE 🔻🔻🔻<p>
+                                </div>
+
+                                <iframe
+                                    id="NifTiFrame"
+                                    src="about:Blank"
+                                    height="500"
+                                    width="700"
+                                    frameborder="0"
+                                    scrolling="no"
+                                    allowfullscreen="true">
+                                </iframe>
+
+                            </section>
+
+                            <!-- Members -->
+                            <section id="thirdgallery" class="tm-section">
+                                <header><h2 class="tm-blue-text tm-section-title tm-margin-b-30">Members</h2></header>
+                                <div class="tm-gallery-container tm-gallery-3">
+                                    <div class="tm-img-container tm-img-container-3">
+                                        <a href="static/junsol.jpg"><img src="static/junsol.jpg" alt="Image" class="img-fluid tm-img-tn"></a>
+                                        <p>Junsol Kim   <a href="https://github.com/JunsolKim">Github</a></p>
+                                    </div>
+                                    <div class="tm-img-container tm-img-container-3">
+                                        <a href="static/hyeongjoon.jpg"><img src="static/hyeongjoon.jpg" alt="Image" class="img-fluid tm-img-tn"></a>
+                                        <p>Hyeongjun Kim   <a href="https://github.com/yeomko22">Github</a></p>
+                                    </div>
+                                    <div class="tm-img-container tm-img-container-3">
+                                        <a href="static/jiyun.jpg"><img src="static/jiyun.jpg" alt="Image" class="img-fluid tm-img-tn"></a>
+                                        <p>Jiyun Kim   <a href="https://github.com/wannasleep00">Github</a></p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <p>The project has been supervised by prof. Sanghyun Park / Jihwan Ha (Ph.D Candidate) @ DELAB in Yonsei Univ..</p>
+                                </div>
+                            </section>
+
+                            <!-- Contact Us section -->
+                            <section id="contact" class="tm-section">
+                                <header><h2 class="tm-blue-text tm-section-title tm-margin-b-30">Contact Us</h2></header>
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        {% block content %}
+                                        <form action="#contact" method=post class="contact-form">
+                                            {{ form.csrf_token }}
+                                            <div class="form-group">
+                                                {{ form.name.label }}
+                                                {{ form.name(class='form-control') }}
+                                                {% for error in form.name.errors %}
+                                                <span style="color: red;">[{{ error }}]</span>
+                                                {% endfor %}
+                                              </div>
+                                            <div class="form-group">
+                                                {{ form.email.label }}
+                                                {{ form.email(class='form-control') }}
+                                                {% for error in form.email.errors %}
+                                                <span style="color: red;">[{{ error }}]</span>
+                                                {% endfor %}
+                                            </div>
+                                            <div class="form-group">
+                                                {{ form.subject.label }}
+                                                {{ form.subject(class='form-control') }}
+                                                {% for error in form.subject.errors %}
+                                                <span style="color: red;">[{{ error }}]</span>
+                                                {% endfor %}
+                                            </div>
+                                            <div class="form-group">
+                                                {{ form.message.label }}
+                                                {{ form.message(class='form-control') }}
+                                                {% for error in form.message.errors %}
+                                                <span style="color: red;">[{{ error }}]</span>
+                                                {% endfor %}
+                                            </div>
+                                            {{ form.submit(class='btn btn-primary') }}
+                                        </form>
+                                        {% endblock %}
+                                    </div>
+                                    <div class="col-lg-6 tm-contact-right">
+                                        <p>
+                                        If you have anything to ask or report, please fill in the blanks! Feedbacks or greetings are welcome as well.
+                                        </p>
+                                    </div>
+                                </div>
+                                </form>
+                            </section>
+                            <footer>
+                                <p class="tm-copyright-p">Yonsei University, Korea | <span class="tm-current-year">2019</span> Capstone Project
+                            </footer>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+                
+        <!-- Javascripts -->
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+        <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.min.js"></script>
+        <script type="text/javascript">
+            var url_string = window.location.href;
+            var url = new URL(url_string);
+            var c = url.searchParams.get("key");
+            var params = [];
+            params["encodedImages"] = ["anatomical.nii", "abilities_train.nii", "abilities_recom.nii"];
+            params["luts"] = [{"name": "Red", "data":[[0, 1, 0, 0], [1, 1, 0, 0]]},{"name": "Blue", "data":[[0, 0, 0, 1],[1, 0, 0, 1]]}];
+            params["abilities_recom.nii"] = {"lut": "Red", "alpha":0.5};
+            params["abilities_train.nii"] = {"lut": "Blue", "alpha":0.5};
+
+            function changeKey(){
+            document.getElementById("NifTiFrame").src = "http://files.junsol.me/nc/?key="+document.getElementById("key").value;
+            }
+         </script>
+            <script src="static/jquery-1.11.3.min.js"></script>
+            <script src="static/jquery.magnific-popup.min.js"></script>
+            <script src="static/jquery.singlePageNav.min.js"></script>
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+                    crossorigin="anonymous"></script></script>
+           <script type="text/javascript">
+                $(document).ready(function(){
+
+                    // Single page nav
+                    $('.tm-main-nav').singlePageNav({
+                        'currentClass' : "active",
+                        offset : 20
+                    });
+
+                    // Magnific pop up
+                    $('.tm-gallery-1').magnificPopup({
+                      delegate: 'a', // child items selector, by clicking on it popup will open
+                      type: 'image',
+                      gallery: {enabled:true}
+                      // other options
+                    });
+
+                    $('.tm-gallery-2').magnificPopup({
+                      delegate: 'a', // child items selector, by clicking on it popup will open
+                      type: 'image',
+                      gallery: {enabled:true}
+                      // other options
+                    });
+
+                    $('.tm-gallery-3').magnificPopup({
+                      delegate: 'a', // child items selector, by clicking on it popup will open
+                      type: 'image',
+                      gallery: {enabled:true}
+                      // other options
+                    });
+
+                    $('.tm-current-year').text(new Date().getFullYear());
+                });
+
+                $("#key").keydown(function(key) {if (key.keyCode == 13) {changeKey()}});
+
+                $(function() {
+                   var data = ["abilities","ability","abstract","abuse","acc","accumbens","accuracy","accurate","accurately","acoustic","act","action","action observation","actions","acts","ad","adaptation","add","addiction","addition","adhd","adolescence","adolescent","adolescents","adult","adulthood","adults","affect","affective","age","agent","aging","al","alcohol","alff","alpha","alzheimer","alzheimer disease","ambiguous","amnestic","amygdala","amygdala anterior","amygdala hippocampus","amygdala insula","amygdala response","amygdala responses","anger","angry","angular","angular gyrus","animal","animals","anterior","anterior cingulate","anterior hippocampus","anterior insula","anterior insular","anterior intraparietal","anterior medial","anterior posterior","anterior prefrontal","anterior superior","anterior temporal","anticipation","anticipatory","anxiety","anxiety disorders","aphasia","appraisal","approach","arithmetic","arm","arousal","arterial","arterial spin","articulatory","asd","association","associations","associative","asymmetry","atrophy","attend","attended","attending","attention","attentional","attentional control","attention deficit","attention network","attention task","attenuation","audiovisual","auditory","auditory cortex","auditory stimuli","auditory visual","autism","autism spectrum","autobiographical","autobiographical memory","autonomic","aversive","avoid","avoidance","awareness","ba","ba 44","balance","basal","basal ganglia","baseline","behavior","behavioral","behavioral measures","behavioral performance","behavioral responses","behaviors","belief","beliefs","beta","bias","bilaterally","bilinguals","binding","biomarker","biomarkers","bipolar","bipolar disorder","blind","bodily","body","brains","brainstem","broca","brodmann","button","calculation","callosum","capacity","capture","categorical","categories","categorization","category","caudal","caudate","caudate nucleus","cerebellar","cerebellum","cerebral","cerebral cortex","character","characters","childhood","children","chinese","choice","choices","choose","chosen","chronic","chronic pain","cingulate","cingulate cortex","cingulate cortices","cingulate gyrus","classical","cognition","cognitive","cognitive control","cognitive deficits","cognitive emotional","cognitive function","cognitive functions","cognitive impairment","cognitively","cognitive performance","cognitive processes","cognitive task","cognitive tasks","coherence","color","communication","compensate","compensation","compensatory","competing","competition","complex","complexity","comprehension","compulsive","compulsive disorder","computation","concentration","concept","concepts","conceptual","concrete","concurrent","concurrently","conditioned","conditioning","conductance","confidence","conflict","conflicting","confounding","congruency","congruent","congruent incongruent","conjunction","connectivity","conscious","consciousness","consecutive","consistency","consolidation","constraints","construction","consumption","context","contexts","contextual","contralateral","control","controlled","controlling","control network","control processes","controls","control task","coordination","core","corpus","corpus callosum","correct","correction","correctly","cortex acc","cortex amygdala","cortex anterior","cortex ba","cortex bilaterally","cortex cerebellum","cortex dacc","cortex dlpfc","cortex dmpfc","cortex dorsal","cortex dorsolateral","cortex frontal","cortex hippocampus","cortex inferior","cortex insula","cortex involved","cortex lateral","cortex m1","cortex medial","cortex middle","cortex mpfc","cortex ofc","cortex parietal","cortex pcc","cortex pfc","cortex posterior","cortex ppc","cortex precuneus","cortex suggest","cortex superior","cortex supplementary","cortex thalamus","cortex ventral","cortex vlpfc","cortex vmpfc","cortical","cortices","cortico","covert","craving","cross modal","cue","cued","cues","cuneus","dacc","daily life","damage","decision","decision making","decisions","decision task","decline","declines","decoding","default","default mode","default network","deficient","deficit","deficit hyperactivity","deficits","delay","delayed","demand","demanding","demands","dementia","dependence","depressed","depression","depressive","depressive disorder","deprivation","depth","detect","detected","detecting","detection","detection task","development","developmental","diagnosis","difficult","difficulty","digit","dimension","dimensional","dimensions","disability","discriminate","discriminated","discrimination","discrimination task","discriminative","disease","disease ad","disease pd","diseases","disgust","disorder","disorder adhd","disorder mdd","disorder ocd","disorder ptsd","disorders","distraction","distractor","distractors","divided","dlpfc","dmn","dmpfc","domain general","dominance","dominant","dopamine","dopaminergic","dorsal","dorsal anterior","dorsal attention","dorsal medial","dorsal premotor","dorsal striatum","dorsal ventral","dorsolateral","dorsolateral pfc","dorsolateral prefrontal","dorsomedial","dorsomedial prefrontal","drug","drugs","dyslexia","dysregulation","early visual","eating","economic","education","efficiency","effort","effortful","elderly","electrical","emotion","emotional","emotional faces","emotional information","emotionally","emotional responses","emotional stimuli","emotional valence","emotion regulation","emotions","empathic","empathy","encode","encoded","encoding","encoding retrieval","endogenous","engagement","english","epilepsy","episode","episodes","episodic","episodic memory","erp","error","errors","estimation","evaluation","evaluations","events","everyday","everyday life","executed","execution","executive","executive control","executive function","executive functions","expectancy","expectation","expectations","experience","experiences","experiencing","expertise","explicit","exploration","exploratory","expressed","expression","expressions","externally","extinction","extrastriate","eye","eye field","eye fields","eye movement","eye movements","eyes","fa","face","face ffa","face recognition","faces","facial","facial expression","facial expressions","familiar","familiarity","family","fasciculus","fc","fear","fearful","fearful faces","feature","features","feeling","feelings","female","females","ffa","fiber","finger","finger movements","finger tapping","fixation","flexibility","fluency","focus","food","foot","force","form","forms","frequency","frontal","frontal cortex","frontal cortices","frontal eye","frontal gyri","frontal gyrus","frontal lobe","frontal lobes","frontal operculum","frontal parietal","frontal temporal","fronto","frontoparietal","fronto parietal","frontoparietal network","frontopolar","fronto striatal","frontotemporal","fronto temporal","functional connectivity","fusiform","fusiform face","fusiform gyri","fusiform gyrus","gain","gains","gambling","game","gamma","ganglia","gaze","gender","generation","genes","german","gestures","globus","globus pallidus","gm","gm volume","goal","goal directed","goals","grasping","gyri","gyrus","gyrus anterior","gyrus ba","gyrus cerebellum","gyrus ifg","gyrus inferior","gyrus insula","gyrus medial","gyrus mfg","gyrus middle","gyrus posterior","gyrus precuneus","gyrus stg","gyrus superior","hand","handed","handedness","hand movements","hands","happy","happy faces","hc","head","health","heard","hearing","heart","heart rate","hemisphere","hemispheres","hemispheric","heschl","heschl gyrus","high risk","hippocampal","hippocampus","hoc","hub","hubs","human","humans","hyperactivation","hyperactivity","hyperactivity disorder","hypoactivation","hypothalamus","identification","ifg","illness","illusion","image","imagery","images","imagine","imagined","imitation","implicit","impulsive","impulsivity","incentive","incentive delay","incongruent","inconsistent","incorrect","index finger","individual variability","induction","inference","inferences","inferior","inferior frontal","inferior middle","inferior occipital","inferior parietal","inferior prefrontal","inferior superior","inferior temporal","information","inhibit","inhibition","inhibitory","inhibitory control","injury","instruction","instructions","insula","insula anterior","insula inferior","insular","insular cortex","integrate","integrated","integrating","integration","integrative","integrity","intelligence","intense","intensity","intention","intentional","intentions","interaction","interactions","interactive","interference","interhemispheric","interoceptive","interpersonal","interval","intervals","intraparietal","intraparietal sulcus","invasive","ipl","ips","ipsilateral","iq","item","items","judgment","judgments","judgment task","junction","junction tpj","knowledge","language","language comprehension","language network","languages","lateral","lateral frontal","lateralization","lateralized","lateral medial","lateral occipital","lateral orbitofrontal","lateral parietal","lateral prefrontal","lateral temporal","learn","learned","learning","learning task","lesion","lesions","letter","letters","lexical","lexical decision","life","light","likelihood","limb","limbic","lingual","lingual gyrus","linguistic","listened","listening","load","lobe","lobe mtl","lobes","lobule","lobule ipl","lobules","location","locations","locus","long term","loop","loss","losses","low level","m1","magnetic stimulation","magnetoencephalography","magnitude","maintenance","major depression","major depressive","manipulation","manipulations","manual","mapping","maps","match","matching","matching task","mci","mdd","medial","medial frontal","medial lateral","medial orbitofrontal","medial pfc","medial prefrontal","medial superior","medial temporal","memories","memory","memory encoding","memory load","memory performance","memory processes","memory retrieval","memory task","memory tasks","memory test","memory wm","mental imagery","mentalizing","mental state","mental states","mesial","mesolimbic","met","metabolic","metabolism","mfg","mg","midbrain","middle cingulate","middle frontal","middle inferior","middle occipital","middle superior","middle temporal","midline","mild cognitive","mind","mind tom","mirror","mm","mnemonic","modalities","modality","modulatory","monetary","monetary incentive","monetary reward","money","monitoring","mood","moral","morphological","morphology","motion","motivation","motivational","motor","motor control","motor cortex","motor function","motor imagery","motor network","motor performance","motor pre","motor premotor","motor response","motor responses","motor sma","motor task","movement","movements","mpfc","ms","mt","mtg","mtl","multiple sclerosis","multisensory","muscle","music","musical","musicians","names","naming","natural","naturalistic","nature","navigation","negative","negative affect","negative emotional","negative emotions","negative feedback","negative neutral","negative positive","negativity","neocortical","network dmn","neutral","neutral faces","neutral pictures","neutral stimuli","nociceptive","nogo","noise","nouns","novel","novelty","noxious","nuclei","nucleus","nucleus accumbens","object","object recognition","objects","obsessive","obsessive compulsive","occipital","occipital cortex","occipital gyrus","occipital lobe","occipital parietal","occipital temporal","occipito","occipitotemporal","occipito temporal","occipitotemporal cortex","ocd","oddball","ofc","older adults","olfactory","opercular","opercularis","operculum","oral","orbital","orbitofrontal","orbitofrontal cortex","organization","orientation","oriented","orienting","orthographic","oscillations","outcome","outcomes","pain","painful","pair","paired","pairs","pallidus","parahippocampal","parahippocampal cortex","parahippocampal gyrus","parahippocampus","paralimbic","parietal","parietal cortex","parietal cortices","parietal frontal","parietal junction","parietal lobe","parietal lobes","parietal lobule","parietal lobules","parietal network","parietal occipital","parietal temporal","parieto","parieto occipital","parkinson","parkinson disease","pars","passive","passively","passive viewing","pcc","pd","people","perceiving","percept","perception","perceptual","performance","performance task","periaqueductal","person","personal","personality","personality traits","persons","pfc","pharmacological","phonological","photographs","picture","pictures","pitch","place","placebo","placebo controlled","planning","planum","planum temporale","plasticity","pleasant","pointing","pole","poor","positive negative","postcentral","postcentral gyrus","posterior","posterior anterior","posterior cingulate","posterior inferior","posterior insula","posterior middle","posterior parietal","posterior superior","posterior temporal","posttraumatic","ppc","precentral gyrus","precuneus","precuneus posterior","prediction","prediction error","predictions","predictive","preference","preferences","prefrontal","prefrontal cortex","prefrontal cortical","prefrontal cortices","prefrontal parietal","premotor","premotor cortex","preparation","preparatory","pre sma","pressure","pre supplementary","primary","primary auditory","primary motor","primary secondary","primary sensorimotor","primary somatosensory","primary visual","prime","priming","probabilistic","probability","production","progressive","prospective","pseudowords","psts","psychosis","psychotic","ptsd","punishment","putamen","questionnaire","rating","ratings","reaching","reaction","reactions","reaction time","reaction times","reactivity","read","readers","reading","real world","reappraisal","reasoning","recall","recognition","recognition memory","recognition task","recognize","recognized","recognizing","recollection","reference","referential","referred","regulate","regulating","regulation","regulatory","rehabilitation","rehearsal","reho","reinforcement","reinforcement learning","relational","relevance","remember","remembered","remembering","reorganization","repetition","repetition suppression","response inhibition","response selection","response time","response times","rest","resting","resting state","retention","retrieval","retrieved","retrosplenial","retrosplenial cortex","reversal","reward","reward anticipation","rewarding","rewards","rhythm","risk","risk taking","risky","rostral","rostral anterior","rotation","rs","rsfc","rt","rule","rules","s1","saccade","saccades","sad","salience","salience network","salient","schizophrenia","schizophrenic","sclerosis","secondary somatosensory","selection","selective","selective attention","self referential","self report","self reported","semantic","semantically","semantic memory","semantics","sensation","sensations","sensitivity","sensorimotor","sensorimotor cortex","sensorimotor network","sensory","sensory information","sensory motor","sentence","sentence comprehension","sentences","separation","sequence","sequences","sequential","serial","serotonin","sex","sexual","sham","shapes","shifting","shifts","short term","si","sighted","signaling","signal task","sii","silent","similarity","simulation","size","sizes","skin","skin conductance","sleep","smokers","smoking","sn","social","social cognition","social cognitive","social interaction","social interactions","socially","solving","somatosensory","somatosensory cortex","somatosensory cortices","sound","sounds","source","sources","space","spatial","spatial attention","spatial information","spatially","spatial temporal","spatiotemporal","speaker","speakers","speaking","spectrum","spectrum disorder","spectrum disorders","speech","speech perception","speech production","spl","spoken","spontaneous","stimulation","stimulation tms","stop","stop signal","storage","strategic","strategies","strategy","stream","streams","stress","stress disorder","striatal","striatum","stroke","stroop","stroop task","sts","subcortical","subcortical structures","subgenual","subjective","subsequent","subsequent memory","substance","substantia","subtraction","success","suffering","sulci","sulcus","sulcus ips","sulcus sts","superior","superior inferior","superior middle","superior parietal","superior temporal","supplementary","supplementary motor","suppressed","suppression","supramarginal","supramarginal gyrus","sustained","sustained attention","switch","switching","symbolic","symptom","symptoms","symptom severity","syntactic","tactile","tapping","target","target detection","targets","task","task demands","task difficulty","task positive","task relevant","tasks","taste","td","tegmental","temporal","temporal cortex","temporal cortices","temporale","temporal frontal","temporal gyri","temporal gyrus","temporal inferior","temporal lobe","temporal lobes","temporal occipital","temporal parietal","temporal pole","temporal sulcus","temporo","temporoparietal","temporo parietal","temporoparietal junction","thalamic","thalamus","theory","theory mind","therapy","thinking","thought","thoughts","threatening","time task","timing","tom","tone","tools","touch","tpj","track","tracking","trait","traits","uncertain","uncertainty","unexpected","unfamiliar","unilateral","unimodal","unpleasant","updating","v1","v5","valence","value","values","ventral","ventral anterior","ventral dorsal","ventral medial","ventral premotor","ventral striatum","ventral tegmental","ventral visual","ventrolateral","ventrolateral prefrontal","ventromedial","ventromedial prefrontal","verb","verbal","verbal fluency","verbal working","verbs","vermis","vi","video","video clips","videos","viewing","violations","virtual","vision","visual","visual attention","visual auditory","visual cortex","visual cortices","visual field","visual information","visually","visually presented","visual motion","visual perception","visual stimuli","visual stimulus","visual stream","visual word","visuo","visuomotor","visuospatial","visuo spatial","vlpfc","vmpfc","vocal","voice","vs","vulnerability","watching","wm","wm task","word","word form","word pairs","word recognition","words","working","working memory","written"];
+                  $('#key').autocomplete({ source : data, minLength:1 });
+                });
+        </script>
+        <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.min.js"></script>
+</body>
+</html>
